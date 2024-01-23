@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#seccion1 {
+    background-color: bisque;
+    width: 500px;
+    height: 200px;
+    border: solid 3px;
+    position: relative; 
+}
+
+/* La posicion relativa se mueve hacia la direccion contraria del elemento, dejando su lugar original vacío. */
+
+#parrafo1 {
+    background-color: red;
+    position: relative;
+    left: 300px;
+    /* display: flex;
+    flex-direction: row-reverse; */
+}
+
+/* Posicion Absoluta: Se usa para posicionar un elemento de manera absoluta con respecto a su elemento padre. Esto significa que el elemento siguiente va a coger ya la posición del elemento absoluto, porque sabe que su hermano se está yendo. Esto es de arriba hacia abajo.Siempre.*/
+#parrafo2 {
+    background-color: greenyellow;
+    position: absolute;
+    left: 50px
+    
+}
+
+#parrafo3 {
+    background-color: blue;
+    position: relative;
+
+}
+
+#parrafo1, #parrafo2, #parrafo3 {
+    width: 30%;
+    color: aliceblue;
+}
+
+
+/* Vamos a ver como funciona cada posicionamiento */

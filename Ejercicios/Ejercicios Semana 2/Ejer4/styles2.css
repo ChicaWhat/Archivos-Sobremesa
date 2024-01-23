@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Escribe aquí las reglas*/
+
+
+  
+ menu {
+    display: flex;
+    justify-content: space-evenly;
+ 
+ }
+
+ /* En otra hoja de CSS utilicé en la etiqueta li, la propiedad flex-grow: 2; y me separa también en 4 columnas la lista.
+Pero no termino de entender bien las propiedades de flex-grow, shrink y basis. Por eso dejo la propiedad de width,
+porque creo que la entiendo mejor. */
+
+li {
+   
+    list-style: none;
+    width: 25%;
+    border: solid;
+   
+}
+
+
+/* Aquí creo que si le aplico un display:flex al enlace, se expande por completo en el item
+que lo contiene, en este caso la lista. */
+
+
+li a {
+
+    background-color: aqua;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    padding: 10px;
+    
+}
+
+a:hover {
+    color: rgb(190, 22, 182);
+    font-style: italic;
+    background-color: pink;
+}
+
+

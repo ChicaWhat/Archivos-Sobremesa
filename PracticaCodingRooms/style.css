@@ -1,0 +1,268 @@
+/* Con estas propiedades marcas que el marco y el contenido de cada contenedor estén a 0. No predeterminado como lo crea HTML. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, sans-serif;
+    /* En realidad poner esto creo que no haría falta, porque el html ya viene predeterminado con el valor de fuente con 16px */
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+body {
+    background-color: rgb(202, 199, 194);
+    max-width: 1200px;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #333;
+    color: white;
+   height: 4.5rem;
+   font-size: 1.4rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+/* Cabecera */
+
+header h1 {
+    margin-left: 3rem;
+}
+
+/* Aquí, anteriormente, le había colocado una class a todas las li, haciendolo un poco más liaso. La forma más sencilla era llamando al header y el form con sus respectivas etiquetas li, para que afectasen a todas ellas. */
+header li, form li {
+    list-style: none;
+}
+
+nav {
+    padding: 0.5rem 1rem
+}
+
+
+nav ul {
+    margin-right: 3rem;
+    display: flex;
+    gap: 40px;
+}
+
+a {
+    text-decoration: none;
+    color: aquamarine;
+}
+
+a:hover {
+    background-color: #555;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+
+
+/* MAin */
+
+body main {
+    display: flex;
+    flex-direction:  column;
+    align-items: center;
+    background-color: white;
+    padding: 2rem;
+}
+
+/* Este main es solo de la página incial */
+
+#intro {
+
+    font-style: italic;
+    font-size: 20px;
+}
+
+#inicio {
+    background-image: url(./imagenes/verdin.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+}
+
+#bg-inicio {
+    width: 50%;
+    min-width: 300px;
+    border-radius: 10px;
+    color: white;
+    margin: auto;
+    padding: 2rem;
+    background-color: rgb(0, 0, 0, 0.6);
+
+}
+
+
+#foto {
+
+    /* Esta opción es creando cada propiedad de una en una. */
+    /* border: 4px;
+    border-style: double;
+    border-color: rgb(117, 111, 111); */
+
+    width: 350px;
+    /* Esta opción junta el width, estilo y color, en ese orden consecutivamente siempre, en una sola propiedad */
+
+    border: 4px solid silver;
+    border-radius: 100px;
+
+}
+
+
+.cabecera-gris {
+
+    color: rgb(124, 120, 120);
+    border-radius: 15px;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+
+/* Esta seccion pertenece al About */
+
+
+
+.listas {
+
+    /*margin-top: 24px;
+    margin-right: 0px;
+    margin-bottom: 24px;
+    margin-left: 0px;*/
+
+    /* Podemos escribir tambien solo dos valores para representar en el 1º el top y el botton y el 2º right y el left. */
+     margin: 1.5rem 0;
+    padding: 1rem;
+    min-width: 60%;
+
+}
+
+.listas li {
+
+    margin-left: 3em;
+}
+
+iframe {
+
+    /* Esto lo hago para crearle un marco redondeado al video */
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+/* Esta sección pertenece al Contact */
+
+address {
+    margin: 1rem;
+
+}
+
+input, textarea {
+    padding: 0.2rem 0.5rem;
+    margin-bottom: 0.7rem;
+    display: block;
+    font-size: 1rem;
+    border: none;
+    border-radius: 3px;
+    background-color: whitesmoke;
+
+}
+
+.one-line{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+
+fieldset {
+
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+
+}
+
+/* Botones del Contact */
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+ul.buttons li {
+    width: 49%;
+    list-style: none;
+}
+
+/* No hace falta que nombre al elemento lista. Puedo pasar directamente del padre ul con clase buttons a nombrar al elemento button. Yo antes tenia puesto el selector ul.buttons li button*/
+.buttons button {
+    border: none;
+    width: 100%;
+    padding: 0.7rem;
+    color: white;
+    background-color: #666;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+/* Antes tenia puesto ul.buttons li button:hover. Se puede simplificar más, como lo dejé abajo. */
+.buttons button:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
+
+
+/* Footer */
+
+footer {
+    background-color: #333;
+    color: white;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Diseño para pantallas pequeñas */
+ @media screen and (max-width: 500px){
+
+
+    html {
+        font-size: 12px;
+    }
+
+    header h1 {
+        margin-left: 1rem;
+    }
+
+    nav ul{
+        margin-right: 1rem;
+        gap: 10px;
+    }
+
+    body main {
+        padding: 1rem;
+    }
+
+    main iframe {
+        width: 90%;
+    }
+
+    section.listas li {
+        margin-left: 1.5rem;
+    }
+
+
+
+
+
+
+
+
+ }

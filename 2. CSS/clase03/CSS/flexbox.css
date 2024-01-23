@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Para diseñar con flexbox necesitamos un padre con un hijo o conjunto de hijos. Si no, no funciona. */
+/* Contenedor = padre = display-flex. A esta propiedad es a la que le vamos a añadir casi todas las cualidades. Esto impacta a lo que tiene a sus hijos. */
+/* Items = hijo/s del contenedor padre. Se van a ver siempre afectados por las propiedades del contenedor */
+/* Eje principal - X, eje horizontal. Es el eje donde se distribuyen los hijos */
+/* Eje secundario -  eje vertical. Es el perpendicular al principal. */
+/* No se pueden trabajar, por ahora, los 2 ejes a la vez. Más adelante si podremos. */
+
+.box {
+    background-color: coral;
+    padding: 10px;
+    margin: 5px;
+}
+
+
+/* PROPIEDADES DEL CONTENEDOR */
+/* Flex-direction */
+/* Lo que está en columnas se transforma a filas. Esto pasa siempre. */
+.container {
+    display: flex;
+    /* Con esta propiedad ponemos los elementos en columnas */
+    flex-direction: column;
+    /* flex-direction: row; */
+    /* Con row-reverse pones los elementos a la derecha */
+    /*flex-direction: row-reverse;*/
+    /* flex-direction: column-reverse */
+}
+
+/* Flex Wrap */
+/* Si el contenido no entra en el eje principal y queremos que no se pierda al encoger la pantalla. Generando filas y columnas.  */
+.container2 {
+    display: flex;
+    /* flex-wrap: nowrap es el valor por defecto siempre */
+    flex-wrap: wrap;
+    /*flex-wrap: wrap-reverse;*/
+
+}
+
+/* Justify Content */
+/* Con el contenedor padre SOLO podemos trabajar con el eje principal, es decir, el eje horizontal */
+.container3 {
+    display: flex;
+    /*justify-content: flex-start; Este valor es por defecto*/
+    /*justify-content: center;*/
+    /*justify-content: flex-end Este valor lleva los elementos a la derecha*/
+    /*justify-content: space-between; Este valor crea un espacio predeterminado entre los elementos*/
+    /*justify-content: space-around; Crea el mismo espacio entre todos los elementos, pero da la sensacion que entre los elementos 1 y 2, 2 y 3 hay mas espacio, pero se trata de la suma de ambos margenes*/
+     justify-content: space-evenly;  /* Los espacios son exactamente iguales*/
+}
+
+/* Align items */
+/* Esto trabaja con los items y con el eje vertical */
+.container4 {
+    height: 200px;
+    border: 2px solid blue;
+    display: flex;
+    /* align-items: stretch; Por defecto */
+    /* align-items: center; */
+    /* align-items: flex-end; */
+    align-items: center;
+    justify-content: center;
+}
+
+/* PROPIEDADES PARA LOS ELEMENTOS HIJOS */
+
+.container5 {
+    display: flex;
+}
+
+.container5 > .box:nth-child(1){
+    order: 3;
+}
+
+.container5 > .box:nth-child(2){
+    order: 2;
+}
+
+/* Flex grow. Un elemento hijo puede aumentar su ancho o alto para que ocupe todo el espacio que quede por rellenar. */
+.container6{
+    display: flex;
+}
+
+.container6 > .box:nth-child(2){
+    flex-grow: 1;
+}
+
+.container6 > .box:nth-child(3){
+    flex-grow: 2;
+}

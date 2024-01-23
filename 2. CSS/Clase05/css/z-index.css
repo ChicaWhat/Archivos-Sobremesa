@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* El Z index lo vamos a usar como eje invisible para nosotros y vamos a ver cómo poder controlarlo. */
+
+p {
+    background-color: cadetblue;
+    width: 150px;
+    height: 100px;
+    border: solid black;
+    position: absolute;
+}
+
+#texto1 {
+    background-color: green;
+    z-index: 2;
+    left: 70px;
+    top: 60px;
+}
+
+/* A mayor valor que nosotros le vayamos a dar a cada selector, mayor va a ser la prioridad de ese selector, y entonces ocupará la primera posición dentro del eje Z. */
+/* Esto se usa mucho con anuncios para que se posicione por delante del contenido de la página y no te deje leer que hay detrás; ventanas emergentes.  */
+#texto2 {
+    background-color: aqua;
+    z-index: 1;
+}

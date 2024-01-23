@@ -1,0 +1,38 @@
+/* Primero iniciamos correctamente el documento css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* El encabezado principal debe tener color verde y su texto centrado */
+h1{
+    color: #008000;
+    text-align: center;
+}
+
+
+/* El encabezado de segundo nivel debe tener color rojo */
+h2{
+    color: #ff0000;
+}
+
+
+/* Los párrafos deben tener color azul */
+p{
+    color: #0000ff;
+}
+
+
+/* El párrafo con id "unico" debe estar subrayado. */
+.unico{
+    text-decoration: underline;
+}
+
+/* Los elementos de lista con clase "destacado" deben estar en negrita. */
+
+
+ul > li.destacado {
+    font-weight: bold;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 12 - Formularios</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    
+    <!-- Primer formulario vacío -->
+    <form>
+
+    </form>
+
+    <!-- Form de registro -->
+    <form name="registro">
+    
+    </form>
+
+    <!-- Form de inicio de sesión -->
+    <form name="inicioSesion">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre">
+        
+        <label for="password">Contraseña</label>
+        <input type="password" name="password">
+        <button>Enviar</button>
+    </form>
+
+    <!-- Conociendo la propiedad .form -->
+    <form>
+        <label for="email">Email</label>
+        <input type="email" name="email">
+    </form>
+
+    <!-- Accediendo a valores del formulario -->
+    <form action="" method="POST">
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="Usuario">
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="Nombre">
+
+        <select id="pais" name="Pais">
+            <option value="AR">Argentina</option>
+            <option value="BR">Brasil</option>
+            <option value="CL">Chile</option>
+            <option value="ES">España</option>
+            <option value="PY">Paraguay</option>
+            <option value="UY">Uruguay</option>
+        </select>
+
+        <input type="radio" name="Opciones" value="si"> Si
+        <input type="radio" name="Opciones" value="no"> No
+
+        <button type="submit" id="enviar">Enviando Datos</button>  
+    </form>
+
+    <script src="./js/formularios.js"></script>
+</body>
+</html

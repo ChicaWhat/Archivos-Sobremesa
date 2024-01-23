@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* SELECTORES AVANZADOS */
+/* Selectores por atributos */
+
+p[lang]{
+    text-decoration: underline;
+}
+
+p[lang="en"]{
+    color: rgb(255, 0, 0);
+}
+
+p[data-author]{
+    font-style: italic;
+}
+
+/* Dar estilos al enlace */
+/* El acceso no fue visitado por el usuario */
+a:link{
+    font-weight: bold;
+}
+
+/* El acceso ya fue visitado por el usuario */
+a:visited{
+    color: rgb(123, 6, 233);
+}
+
+/* Cambios al pasar el mousse por encima del enlace */
+a:hover{
+    color: crimson;
+}
+
+/* Se produce un cambio cuando pulsamos el elemento */
+a:active{
+    color: bisque;
+}
+
+/* Selector de hermano adyacente */
+
+#miCheck:checked + label{
+    text-decoration: line-through;
+    background-color: black;
+    color: green;
+}
+
+/* Seleccionamos el primer hijo de su elemento padre */
+#seccion1 ul li:first-child   {
+    font-size: 1.5rem;
+
+}
+
+/* Seleccionar el ultimo hijo del elemento padre */
+#seccion1 ul li:last-child{
+    color: blue;
+}
+
+/* Seleccionamos un hijo a traves de su posición */
+#seccion1 ul li:nth-child(2){
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* PSEUDOELEMENTOS */
+
+#seccion2 p::first-letter{
+    font-size: 3rem;
+}
+
+/* Le damos estilos a la primera linea del texto */
+#seccion2 p::first-line{
+    color: darkgoldenrod;
+}
+
+/* Le damos estilos al texto que tengamos seleccionado con el mouse o el teclado */
+#seccion2 p::selection{
+    background-color: black;
+    color: rgb(18, 128, 224);
+}
+
+/* Agregando texto al comienzo de la etiqueta <p> */
+#seccion2 p::before{
+    content: "Este texto es agregado de esta etiqueta p ";
+}
+
+/* Agregando texto al final de la etiqueta <p> */
+#seccion2 p::after{
+    content: "Agrengado un texto al final de este párrafo";
+    color: red;
+}
+
+/* Combinando selectores */
+/* Da igual que los elementos formen parte de otros contenedores. Se conectaran con una "," */
+#seccion3 p, form {
+    background-color: antiquewhite;
+}
+
+/* La p son hijos DIRECTOS del div, por eso, para ser asi de específicos usamos > */
+#seccion3 div > p {
+    background-color: rgb(48, 48, 230);
+}
+
+/* Hermanos no consecutivos ~ */
+/* En este caso, colocar la p antes de # es solo para especficar más aún. Valdría igual si no se pone esa p antes de # */
+p#parrafo3_seccion4 ~ p {
+    color: rgb(0, 233, 233);
+}

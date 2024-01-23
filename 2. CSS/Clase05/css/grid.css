@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Flexbox está pensado en un plano sin dimensiones de manera horizontal.
+Con grid está pensando para trabajar con planos bidimensionales. Ayuda mucho a crear una estructura rápida inicial. Se complementan bien grid y flexbox. */
+
+#seccion {
+    background-color: rgb(231, 153, 166);
+    width: 1200px;
+    margin: 20px auto;
+    display: grid;
+
+    /* Lo que definimos como columnas no puede superar el valor del ancho que le dimos anteriormente */
+    /* Aqui usamos el valor 1Fr para que se adapte al valor que faltaría para terminar de rellenar la seccion. Auto hace exactamente lo mismo que la Fr */
+
+    /* grid-template-columns: 150px 300px 300px 1fr; */
+
+    /* grid-template-columns: 150px repeat(2 [numero de columnas a repetir], 300px [el valor repetido que quiero que tenga ese nº de columns]) 1fr; */
+    grid-template-columns: 150px 300px repeat(2, 300px) 1fr;
+    /* grid-template-rows: 250px 200px 150px; */
+    /* Con el valor minmax() tambien se espera que se de dos valores. Con el contenido de auto para el valor max, la última fila se agrandará todo lo que el contenido quiera, porque se irá a adaptando. */
+    grid-template-rows: 200px 100px minmax(100px, auto);
+
+    /* Grid tambien tiene gap, como flexbox */
+     /* gap: 3px */
+     /* border: solid blue; */
+}
+
+/* Primer ejemplo */
+
+.articulos {
+    background-color: bisque;
+    border: solid 2px green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.articulo1 {
+    /* grid-column-start: 1;
+    grid-column-end: 5; */
+    /* Si agrego un -1 en el segundo valor del grid column, no importa cuantas columnas vaya a agregar porque siempre siempre va a hacia -1 la fila. */
+    grid-column: 1/4;
+    grid-row: 1/3;
+
+} 
+
+.articulo4 {
+    grid-row: 2/4
+}
+
+
+.articulo12 {
+    grid-column: -6/6
+}
+

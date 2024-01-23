@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Colocar el menú de manera horizontal */
+body {
+  font-family: Arial, sans-serif;
+  
+}
+
+/* Escribe aquí las reglas*/
+
+
+
+nav {
+  color: #00ffff;
+  display: flex;
+  justify-content: center;
+  
+}
+
+
+/* Lo que hice con el menú fue agrandar su contenido en el 100x100 de la pantalla, para que esta la llene por completo. */
+
+menu {
+  display: flex;
+  height: 100vh;
+}
+
+/* Lo que hice acá fue alargar a lo ancho, cada lista para que ocupe toda página. */
+
+li {
+  display: inline-flex;
+  justify-content: center;
+  border: solid;
+  padding: 10px;
+  width: 25vw
+}
+
+
+
+
+
+a:hover {
+  color: coral;
+  font-style: italic;
+  
+}  

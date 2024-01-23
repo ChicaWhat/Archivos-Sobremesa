@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* El position fixed se usa sobretodo en el header y en el chat bot, por ejemplo */
+/* header {
+    background-color: rgb(130, 137, 143);
+    width: 100%;
+    height: 15vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+} */
+
+section h2 {
+    background-color: aqua;
+    position: sticky;
+    top: 0;
+}

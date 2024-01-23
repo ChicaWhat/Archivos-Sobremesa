@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <header>
+    <!-- Repito el título principal en todas las páginas -->
+    <h1>Carmen</h1>
+    
+    <!-- Creamos la etiqueta semántica nav para crear una lista desordenada donde creemos los enlaces para navegar por nuestra página web. -->
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                 <li><a href="./about.html">Sobre mi</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+
+        <h2>Contacto</h2>
+  
+        <address>
+            <p>Email: carmengh106@gmail.com</p>
+            <p>Teléfono: +34 609 954 954</p>
+        </address>
+
+         <form>
+            <fieldset>
+                    <legend>Datos de contacto</legend>    
+                <ul class="noestilo">
+                    <li>
+
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name">
+                    
+                    </li>
+
+                    <li>
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" required autocomplete="off">
+                        
+                    </li>
+
+
+                    <li>
+                        <label for="comentarios">Observaciones:</label>
+                        <textarea name="comentarios" id="comentarios" minlength="3" maxlength="50" cols="30" rows="10" placeholder="Escribe aquí lo que quieras (Entre 3 y 50 caracteres)"></textarea>
+
+
+                    </li> 
+
+                </ul>
+            </fieldset>
+
+
+
+
+        <fieldset>
+         <legend>Otros datos de interés</legend>
+
+            <ul class="noestilo">
+
+
+                <li>
+                <label for="cumpleaños">Fecha de cumpleaños:</label>
+                <input type="date" id="cumpleaños" name="cumpleaños">
+                </li>
+
+                <li>
+                <label for="telefonoMovil">Teléfono Móvil:</label>
+                <input type="tel" id="telefonoMovil" name="telefonoMovil">
+                </li>
+
+                <li>
+                    <label for="favorito">Número favorito (del 1 al 20)</label>
+                    <input type="number" id="favorito" min="1" max="20">
+                </li>
+
+                <li class="one-line">
+                    <label for="colorFavorito">Color favorito:</label>
+                    <input type="color" id="colorFavorito" name="colorFavorito">
+                </li>
+
+                <li>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password"  placeholder="1234">
+                </li>
+
+                <li>
+                    <label for="conditions">Aceptas los terminos y condiciones sin leerlos?</label>
+                    <input type="checkbox" name="conditions" id="conditions" value="Acepto" checked>
+                    
+                </li>
+
+
+                <li class="one-line">        
+                    <p>¿Quieres ser mi amig@?</p>
+                    <label for="amigoSi">Claro</label>
+                    <input type="radio" name="amigos" id="amigoSi" value="Si" checked>
+
+                    <label for="amigoNo">No quiero</label>
+                    <input type="radio" name="amigos" id="amigoNo" value="No">
+                </li>    
+
+                <label for="ComidaFav">Comida Favorita:</label>
+                <select name="ComidaFav" id="ComidaFav">
+                    <option value="Pasta">🍝 Pasta</option>
+                    <option value="Sushi" selected>🍣 Sushi</option>
+                    <option value="Entrecot">🥩 Entrecot</option>
+                    <option value="Poke">🥗 Poke</option>
+                </select>
+
+
+
+            </ul>
+                
+        </fieldset> 
+           
+            <ul class="buttons">   
+                <li><button type="submit">Enviar</button></li>
+                <li><button type="reset">Borrar</button></li>
+            </ul>
+
+        </form>
+
+    </main>
+
+        <footer>
+            <p>Mi sitio web. Todos los derechos de autor reservados</p>
+        </footer>
+</body>
+</html>

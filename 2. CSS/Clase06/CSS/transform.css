@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Las transformaciones nos permiten cambiar el posicionamiento del elemento a través de 
+coordenadas: agrandarlo, girarlo, moverlo, achicarlo, etc */
+
+#contenedorPrincipal{
+    background-color: bisque;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.sombra, .circulo, .escalarElemento, .rotacion, .inclinacion{
+    width: 80px;
+    height: 80px;
+}
+
+
+/* Vamos a realizar un círculo con una sombra */
+/* Propiedad: transform, nombre: traslate() */
+.sombra{
+    background-color: rgba(0, 0, 0, 0.473);
+    border-radius: 50%;
+}
+
+
+
+.circulo{
+    background-color: rgb(216, 155, 41);
+    border-radius: 50%;
+    transform: translate(50px, 10px);
+}
+
+.circulo:hover{
+    transform: translate(60px, 40px);
+}
+
+
+/* Transform: scale */
+
+.escalarElemento{
+    background-color: rgb(236, 141, 141);
+    transform: scale(-0.8);
+}
+
+/* Transform: rotate() */
+
+.rotacion{
+    background-color: olivedrab;
+}
+
+.rotacion:hover{
+    transform: rotate(45deg);
+}
+
+/* Transform: skew() */
+
+.inclinacion{
+    background-color: aquamarine;
+
+}
+
+.inclinacion:hover{
+    transform: skew(-40deg, 20deg);
+}

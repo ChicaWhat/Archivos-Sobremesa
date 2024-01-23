@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    background-color: aquamarine;
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 20%;
+    /* Sumando los tres valores del vh da el 100x100 de la altura de la ventana */
+    grid-template-rows: 15vh minmax(80vh, auto) 5vh;
+    grid-template-areas: 
+         "header header"    
+        "content aside"     
+        "footer footer"     
+    ;
+}
+
+h1, h2, footer > p {
+    color: white;
+}
+
+header {
+    background-color: black;
+    grid-area: header;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+section {
+    background-color: bisque;
+    grid-area: content;
+}
+
+aside {
+    background-color: olive;
+    grid-area: aside;
+}
+
+footer {
+    background-color: silver;
+    grid-area: footer;
+}

@@ -1,0 +1,22 @@
+
+section p:nth-of-type(1){
+    background-color: rgb(255, 149, 0);
+
+}
+
+section p:nth-of-type(2){
+    background-color: rgba(255, 149, 0, 0.8);
+}
+
+section p:nth-of-type(3){
+    background-color: rgb(255, 149, 0, 0.6);
+}
+
+section p:nth-of-type(4){
+    background-color: rgb(255, 149, 0, 0.4);
+}
+
+section p:nth-of-type(5){
+    background-color: rgb(255, 149, 0, 0.2);
+}
+

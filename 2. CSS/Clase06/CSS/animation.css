@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Las variables se crean siempre dentro del selector html */
+html{
+    --colorEncabezado: rgb(240, 101, 101);
+}
+
+header{
+    background-color: var(--colorEncabezado);
+}
+
+
+.elemento1{
+    width: 100px;
+    height: 100px;
+    background-color: purple;
+    animation: cambioDeTamañoYColor 3s infinite;
+}
+
+/* @keyframes cambioDeTamañoYColor{
+
+    0%{
+        background-color: orangered;
+    }
+
+    50%{
+        background-color: chartreuse;
+        width: 150px;
+        border-radius: 30px;
+    }
+
+    100%{
+        background-color: red;
+    }
+
+}*/
+
+/* Esta forma es para limitar simplemente solo 2 estados de transición, la anterior se puede transicionar en tantos colores como porcentaje de transición ponga. */
+
+@keyframes cambioDeTamañoYColor{
+
+    from {
+        background-color: darkred; /* Estado inicial (0%)*/
+    }
+
+    to{
+        background-color: green; /*Estado final (100%)*/
+    }
+}
+
+.elemento2{
+    background-color: aqua;
+    width: 80px;
+    height: 50px;
+    position: relative;
+    /* Con la propiedad linear va a hacer que el movimiento sea mas natural */
+    animation: desplazamientoHorizontal 5s infinite linear;
+}
+
+/* @keyframes desplazamientoHorizontal{
+
+    0%{
+        position: static;
+    }
+
+    50%{
+        transform: translateX(400px);
+    }
+
+    100%{
+        transform: translateX(800px);
+    }
+
+} */
+
+
+/* @keyframes desplazamientoHorizontal{
+
+    0%{
+        left: 0;
+    }
+
+    100%{
+        left: 100%;
+        background-color: brown;
+    }
+
+} */
+
+
+@keyframes desplazamientoHorizontal
+{
+
+    0%{
+        position: static;
+    }
+
+    50%{
+        transform: translateX(-200%);
+    }
+
+    100%{
+        transform: translateX(5000%);
+    }
+}
+
+
+/* Animacion corazon */
+.corazon{
+    font-size: 3rem;
+    position: fixed;
+    left: 50%;
+    animation: latido 1s infinite;
+}
+
+@keyframes latido{
+
+    0%{
+        transform: scale(1);
+    }
+
+
+    50%{
+        transform: scale(1.5);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+
+}
+
+/* Animacion al elemento 3 */
+.elemento3{
+    width: 300px;
+    height: 100px;
+    background-color: pink;
+    animation: desvanecer 2s infinite;
+}
+
+@keyframes desvanecer{
+
+    from{
+        opacity: 1;
+    }
+
+    to{
+        opacity: 0;
+    }
+}

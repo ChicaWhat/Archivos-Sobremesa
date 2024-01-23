@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* El li es un elemento de bloque! entonces va a ocupar toda 
+la pantalla al completo. Dependiendo del tamañao del padre. */
+menu {
+    margin: 5px;
+    display: flex;
+    
+}
+
+
+li {
+    background-color: aqua;
+    border: 1px solid silver;
+    list-style: none;
+    flex-grow: 2;
+ 
+}
+
+/* Cuando pongo un borde a la etiqueta <a> me doy cuenta de que no es un elemento block, sino inline. */
+
+li a {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: blue;
+    font-style: italic;
+    background-color: aquamarine;
+}

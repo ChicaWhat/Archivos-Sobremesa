@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* El li es un elemento de bloque, entonces como queremos hacerlos elemento inline utilizamos display sobre su padre, 
+menu */
+
+
+menu {
+    display: flex;
+    list-style: none;
+    
+}
+
+/* Esto significa que cada li (hay 4 en este caso), va a coger todo el ancho al 100x100 */
+/* Justify-content: eje horizontal; align-items: eje vertical */
+li {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+}
+
+li:hover {
+    background-color: yellow;
+}
+
+a  {
+    text-decoration: none;
+}
+
+/* Align-items permite mover el bloque entero con respecto al eje vertical.
+Con Align-content mueves cada elemento que esté dentro de ese bloque  */
+/* Cuando hemos usado el flex-direction:column, el align-content funciona, moviendo cada elemento que esté dentro del contenedor de manera vertical. Pero no olvidar que los elementos están dispuestos en forma de columna. */

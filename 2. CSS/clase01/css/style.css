@@ -1,0 +1,102 @@
+* {
+    /* Esta propiedad pone color a toda la página */
+    background-color: blueviolet;
+    /* Esta propiedad elimina los margenes que html te predetermina */
+    margin: 0;
+    padding: 0;
+    /* Esta propiedad lo que hace es borrar los margenes, bordes y padding predeterminados que crean cada HTML y lo deja todo sin valor para poder nosotros manipular desde 0 cada etiqueta que nosotros vayamos creando. */
+    box-sizing: border-box;
+}
+
+h1 {
+    color: aqua;
+    background-color: black;
+    font-size: 30px;
+    text-align: center;
+ }  /* Display: inline; sirve para acortar el block de esta etiqueta */
+ 
+
+
+ 
+/* Esta es una forma de quitar la linea que hay debajo de los hipervinculos */
+nav ul li a {
+    text-decoration: none;
+} 
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+/* Esta es una forma de quitar la linea que hay debajo de los hipervinculos 
+a {
+    text-decoration: none;
+} */
+
+
+div {
+
+
+    /* Este código completo se puede resumir más aún
+    border-style: solid; 
+    border-color: blueviolet;
+    border-width: 3px; */
+    border: solid 3px rgb(238, 76, 7);
+    width: 50%;
+    height: 200px;
+    /* La propiedad margin me ha centrado todo el div por igual */
+    margin: auto;
+    /* El padding crea la distancia entre el contenido y el borde */
+    padding: 10px;
+    /* Esta propiedad esconde el contenido dentro del marco que he creado y lo dejo de ver  
+    overflow: hidden; */
+    
+    /* Este propiedad esconde el contenido dentro del marco y te crea un scroll para que puedas ir bajando y ver el contenido que te esconde */
+    overflow: auto; 
+
+}
+
+/* Esta es una manera de aplicar un estilo a unas partes que yo elija 
+.italic {
+    font-style: italic;
+} */
+
+/* Contenedor padre + la etiqueta a elegir que esté dentro de ese contenedor */
+div p {
+    font-style: italic;
+    text-transform: uppercase;
+    /* Esta propiedad pone toda la tipografía en minuscula 
+    text-transform: lowercase; */
+}
+
+div h2 {
+    text-decoration: underline;
+}
+
+
+/* Seccion 1 */
+#seccion1 {
+    color: rgb(0, 255, 0);
+    font-weight: 800;
+    text-transform: capitalize;
+    text-decoration: line-through;
+    
+}
+
+#seccion1 p span {
+    text-decoration: underline;
+}
+
+/* Sección 2 */
+#seccion2 p{
+    text-shadow: orange 3px 3px 2px; 
+    letter-spacing: 3px;
+    word-spacing: 10px;
+    padding: 15px 20px 10px 5px;
+    border: 2px solid yellow;
+    /* El margen es el que te va a crear el espacio entre ambos párrafos, porque va de fuera a dentro. No lo crearía el padding, porque el padding crea margen entre el contenido y el borde */
+    margin: 20px;
+    width: 450px;
+    height: 150px;
+    
+}

@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Vamos a empezar a crear diseños para pantallas móviles. Va a ser imprescindible empezar a crear de pantallas pequeñas a grandes */
+
+html {
+    background-color: beige;
+}
+
+header {
+    background-color: coral;
+    width: 100%;
+    /* height: ; */
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+}
+
+/* Con esto ponemos los hijos uno al lado del otro */
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    /* margin-top: 10px;  */
+    /* El gap lo que genera es espacio entre cada hijo de este padre. Genera el espacio por igual entre cada hijo. */
+}
+
+a {
+    text-decoration: none;
+    font-weight: 800;
+}
+
+/* Con el main directamente creo espacio entre el artículo 1 y el footer. Yo he sido más complicada y lo habría hecho con id en el primer y el último artículo. Se puede simplificar mucho. */
+
+main {
+    margin: 10px 0 10px 0;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+article {
+    width: 50%;
+    height: 250px;
+    border: solid 2px blue;
+    padding: 10px;
+    background-color: rgb(77, 77, 209);
+}
+
+h2 {
+    margin-bottom: 10px;
+    border: solid;
+    text-align: center;
+}
+
+/* Si tengo que crear espacio entre contenido y contenido uso el margen */
+/* Si tengo que crear espacio entre elementos dentro de un contenedor uso gap */
+/* El margen no agranda el contenedor! Solo crea espacio entre dos contenidos */
+
+footer {
+    background-color: silver;
+    margin: 10px;
+    text-align: center;
+}
+
+/* Diseño para Pantalla Tablets */
+@media screen and (min-width: 800px){
+
+/* Cuando la pantalla mide de mínimo 800px en adelante, empiezan a ocurrir los cambios que estoy creando dentro de este @media, pero mantiene TODO lo creado anteriormente.*/
+/* Queda claro que el contenido ORIGINAL es el media para pantalla de MOVIL. */
+
+    header {
+        background-color: rgb(204, 136, 238);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    li a{
+        color: white;
+    }
+
+    section {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    article {
+        width: 40%;
+    }
+}
+
+/* Diseño para pantalla de escritorio */
+@media screen and (min-width: 1000px){
+
+    header {
+        background-color: aqua;
+
+    }
+
+    article {
+        width: 30%;
+    }
+
+
+
+}

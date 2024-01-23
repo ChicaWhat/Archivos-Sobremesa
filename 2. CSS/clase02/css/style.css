@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+/* Esta es la tipografía que voy a usar en la etiqueta p */
+
+/* No hace falta tener que poner cada font de cada tipografía diferente, solo se usa un import y lo que hay que agarrar es la etiqueta CSS */
+/* Otra etiqueta de font para usar */
+/* font-family: 'EB Garamond', serif; */
+/* font-family: 'Playfair Display', serif; */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    background-color: aqua;
+
+}
+
+h1 {
+
+    font-family: 'Playfair Display', serif;
+    margin: 20px;
+    padding: 10px;
+
+}
+
+
+
+
+/* Para poder manejar un display inline, hay que transformarlo en display block */
+/* Si usamos el inline-block todos los elementos inlines que estén de seguido, se colocaran en tipo blockes, sino se irá abajo */
+
+
+/* Display: 
+
+    -block: se le puede dar un ancho y un alto.
+    -inline: solo usa su caja sin poder manipularlo en ancho y alto. Pero los bordes y demas si.
+    -inline-block: permite aplicar un ancho y un alto. Ademas, se podrá poner un elemento inline a su lado sin ningún problema. */
+
+
+
+    /* Unidades de medida:
+     -pixel
+     -em: 1em ----> 16 px (relativo a su elemento padre)
+     -rem (relativo al documento html) 
+     
+     */
+
+
+
+    /* Uso de em */
+section {
+
+     font-size: 2em; /*Esto equivale a 32px */
+
+}
+
+#texto1 {
+
+    font-size: 2em; /*Esto equivale a 64px, porque multiplica el valor del padre (section) y el id texto  */
+
+}
+
+/* Uso de rem */
+#texto2 {
+
+    font-size: 2rem; /* Esto equivale a 16px */
+
+}
+
+/* Uso del porcentaje %  */
+/* Utilizando el contenedor padre seccion2, quien ocupa un 80% de la pantalla */
+#seccion2 {
+
+    background-color: aquamarine;
+    width: 80%;
+
+}
+
+/* Contenedor hijo de seccion2 */
+#seccion2 p{
+
+    background-color: silver;
+    width: 90%; /* El contenedor hijo va a tomar el 90% de los 80%, porque para él es el 100% */
+}
+
+ /*  viewport --->   VW (ancho) - vh (altura) la ventana de nuestro navegador */
+#seccion3 {
+
+    background-color: bisque;
+    width: 50vw;
+    height: 100vh;               
+
+}
+
+
+p {
+
+    font-family: 'EB Garamond', serif;
+    margin: 10px;
+    width: 500px;
+    border: 2px solid goldenrod;
+    padding: 10px;
+}
+
+
+a {
+
+    display: inline-block;
+    margin: 20px;
+    padding: 30px;
+    border: double 5px red;
+    width: 200px;
+    height: 100px;
+
+}
+
+
+#seccion4 {
+    
+    background-color: blueviolet;
+    /* Esta altura y ancho va a ocupar las medidas asignadas, independientemente la pantalla en la que se esté visualizando */
+    width: 90%;
+    height: 50vh;
+    background-image: url('../imagenes/perro.jpg');
+    /* Esta propiedad impide que la imagen se repita X veces para ocupar el espacio del contenedor asignado  */
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}

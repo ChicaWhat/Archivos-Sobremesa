@@ -1,0 +1,24 @@
+/* Este es un comentario CSS */
+
+body {
+  background-color: #f50f0f;
+  color: #161616;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 24px;
+  color: #ffffff;
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.destacado {
+  background-color: #ffcc00;
+  font-weight: bold;
+}
