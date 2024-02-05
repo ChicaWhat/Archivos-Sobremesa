@@ -10,5 +10,5 @@ import { getMayor } from './src/service/funciones.js';
 
  console.log(getAllData());
 
- console.log(getMayor(12,3)); 
+ console.log(getMayor(12,3));
 
