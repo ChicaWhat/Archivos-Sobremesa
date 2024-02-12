@@ -1,8 +1,0 @@
-1 - En la carpeta donde queremos crear el proyecto ejecutar
-    npm init -y --> crea el archivo package.json
-
-2 - Habilitar es6 en el archivo package.json --> "type": "module"
-
-3 - Se reemplaza el module.exports por export
-
-4 - Se reemplaza el require por import

@@ -1,0 +1,23 @@
+{
+    "type": "module",
+    "name": "ejercicio-1",
+    "version": "1.0.0",
+    "description": "Crea un servidor que simule varias acciones referentes a un usuario. Debes agregar como mínimo un middleware de manejo de errores, uno de ruta no encontrada y otro para poder leer un body con contenido JSON. Como bonus, también sería interesante que agregues un middleware que muestre información sobre la petición entrante, por ejemplo, usando la dependencia [morgan](https://www.npmjs.com/package/morgan).",
+    "main": "app.js",
+    "scripts": {
+        "dev": "nodemon ./app.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "eslint": "^8.56.0",
+        "nodemon": "^3.0.3",
+        "prettier": "^3.2.5"
+    },
+    "dependencies": {
+        "dotenv": "^16.4.1",
+        "express": "^4.18.2",
+        "morgan": "^1.10.0"
+    }
+}

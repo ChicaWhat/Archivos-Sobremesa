@@ -1,0 +1,271 @@
+VARIABLES GLOBALES EN NODE
+
+Son fundamentales para el funcionamiento básico de una aplicación Node.js. Están siempre disponibles en cualquier parte
+de la aplicación, sin importar en que módulo (archivos) me encuentre.
+
+\\ - process - //
+Este proceso es ESENCIAL en Node.js. Proporciona info y control sobre el proceso actual de Node. Ejem:
+detalles sobre el entorno de ejecución, opciones de líneas de comandos, el sistema operativo, etc
+Una propiedad interesante es 'process.env' que proporciona acceso a las variables de entorno de Node.js, las cuales
+e usan para configurar el comportamiento de la app. Este obj te permite leer y escribir en las variables de entorno
+de tu sistema
+Se accede a las variables de entorno a través del objeto global 'process.env'
+¡¡¡¡¡NO SE DEBE DE IMPRIMIR NI ALMACENAR LOS DATOS DE PROCESS.ENV YA QUE CONTIENE INFO SENSIBLE QUE COMPROMETE
+LA SEGURIDAD DEL SISTEMA!!!!!
+
+\\ - console - //
+Es una propiedad de 'windows', pero en Node.js es una variable global.
+Los métodos más comunes: console.log y console.error
+
+
+\\ - setTimeout. setInterval, clearTimeout, clearInterval - //
+Son fundamentales para la naturaleza asíncrona de Node.js y permite programar código que se ejecutara en
+un futuro.
+setTimeout y setInterval -> programan la ejecución de código después de X tiempo
+cleatTimeout y clearInterval -> cancelan estas operaciones programadas
+
+\\ - __dirname, __filename - //
+console.log(__dirname) -> Ruta Absoluta del directorio que contiene el archivo en ejecución
+console.log(__filename) -> Ruta Absoluta del archivo en ejecución
+En ES6 estas variables no existen. Por lo tanto se usa la propiedad cwd del objeto process para acceder a la
+ruta del directorio actual
+console.log(process.cwd()) = console.log(__dirname)
+
+VARIABLES DE ENTORNO
+Se puede acceder a ellas gracias a la variable global ''process.env'' seguido del nombre de esta en MAYUS
+Ejem: console.log(process.env.PATH);
+Si se necesita cambiar una variable de entorno se puede configurar a nivel del sistema operativo o simplemente
+escribiendo en el 'script' el nombre de la variable seguido del valor que se le quiere asignar. Ejemp: LANG=es
+
+ARGUMENTOS DE LÍNEA DE COMANDOS
+Se pueden acceder a ellos a través del obj global 'process.argv', el cual devolverá un array que contiene
+los argumentos pasados al script de Node durante su ejecución
+
+CORE MODULES
+Node.js tiene una serie de módulos integrados, llamados CORE MODULES los cuales proporcionan funcionalidades esenciales
+para el desarrollo de app en Node.js y no necesitan ser descargados a través de npm.
+Para importar un módulo personalizado se hace de la siguiente manera:
+------ import myModule from './myModule.js'; ---------
+Para importar un módulo nativo o de terceros mediante npm que se encuentre dentro del directorio node_modules
+es similar al proceso anterior, pero sin especificar la ruta del módulo:
+------ import path from 'path';
+
+MODULOS NATIVOS DESTACADOS
+\\ - path - //
+Es un módulo CRUCIAL porque hace que las rutas de la aplicación funcionen correctamente independientemente del sistema
+operativo en el que se ejecute Node.js (Windows \ , Unix (ubuntu) / )
+'path' proporciona varios métodos útiles:
+
+---|path.join()|---
+El método .join() se usa para construir rutas a partir de múltiples partes.
+Sintaxis:
+path.join(path1, path2, path2, ...); siendo path1, 2... partes de las rutas que deseo unir separadas por coma
+Ejemplo console.log(path.join(process.cwd(), 'imagenes/picture1.png'));
+
+---|path.resolve()|---
+Este método toma una secuencia de rutas y los ''resuelve'' en una ruta absoluta. Este método procesa las rutas
+de derecha a izquierda, resolviendo cada ruta hasta crearse la ruta absoluta
+Ejemplo: console.log(path.resolve('home', process.cwd(), 'imgs'));
+
+---|path.extname()|---
+Devuelve la extensión de un archivo en una ruta de archivo.
+Ejemplo: 
+const filePath = process.cwd() + '/imgs/picture1.png';
+console.log(path.extname(filePath)), // Esto devuelve '.png'
+
+\\ - fs - //
+''File System'' proporciona utilidades para leer, crear, escribir o eliminar archivos y directorios. Este móudlo ofrece
+versiones síncronas y asíncronas de sus métodos. Se recomienda las versiones asíncronas para mejor rendimientos
+Se acceden a ellas a través de ''fs/promises''
+Métodos más comunes:
+
+---|fs.access()|---
+Se usa para verificar la existencia y el acceso a un archivo o directorio. Es útil para comprobar si un archivo
+existe o si tienes los permisos necesarios para leer o escribir en él.
+Sintaxis: fs.access(path);
+Ejemplo:
+import fs from 'fs/promises';
+
+async function checkFile() {
+try {
+	await fs.access('./file.txt');
+	console.log('El archivo existe');
+
+	} catch {
+		console.log('El archivo no existe');	
+	}
+}
+checkFile();
+Si existe el archivo se imprimirá 'El archivo existe'.
+
+---|fs.mkdir()|---
+Este método crea un nuevo directorio. Especificas el nombre y la ubicación del nuevo directorio mediante 'path'
+Sintaxis: fs.mkdir(path, options);
+Donde 'path' es una cadena que especifica la ubi y el nombre del nuevo directorio y 'options' es un objeto
+opcional que puede incluir el modo del directorio (permisos) y si se deben de crear directorios intermedios si
+aún no existen (opción 'recursive')
+Ejemplo:
+import fs from 'fs/promises';
+
+async function createDirectory() {
+  try {
+    await fs.mkdir('./new-directory');
+    console.log('Nuevo directorio creado exitosamente');
+  } catch (err) {
+    console.error('Error: ', err);
+  }
+}
+
+createDirectory();
+
+---|fs.readdir()|---
+Este método lee el contenido de un directorio y devuelve una matriz con los nombres de archivos y subdirectorios
+en ese directorio
+Sintaxis: fs.readdir(pat, options);
+Donde 'path' es una cadena que especifica la ubi del directorio que deseo leer y 'options' es un objeto
+opcional que incluye el tipo de codificicación que se debe de usar para los nombres de archivos
+(por defecto 'utf8')
+Ejemplo:
+import fs from 'fs/promises';
+
+async function readDirectory() {
+  try {
+    const files = await fs.readdir('./');
+    console.log('Contenido del directorio:', files);
+  } catch (err) {
+    console.error('Error:', err);
+  }
+}
+
+readDirectory();
+
+---|fs.readFile()|---
+Lee el contenido de un archivo y devuelve el contenido completo en memoria
+Sintaxis: fs.readFile(path, options);
+Donde 'path' es una cadena que especifica la ubi del archivo que deseas leer y 'options' es un obj opcional
+que puede incluir la codificación que se debe utilizar en el archivos (por defecto es 'null', entonces devuelve
+el contenido como un búfer). Si se desea leer el contenido como una cadena se deberá de poner 'utf8'.
+Ejemplo:
+import fs from 'fs/promises';
+
+async function readFile() {
+  try {
+    const data = await fs.readFile('./example.txt', 'utf8');
+    console.log(data);
+  } catch (err) {
+    console.error(`Error: ${err.message}`);
+  }
+}
+
+readFile();
+
+---|fs.writeFile()|---
+Se usa para escribir datos en un archivos. Si el archivo ya existe, este sobreescribirá su contenido.
+si no existe, crea uno nuevo.
+Sintaxis: fs.writeFile(file, data, options);
+- File: cadena o búfer que especifica la ubi del archivo en el que se deben de escribir los datos
+- Data: cadena o búfer que contiene los datos a escribir en el archivo
+- Options: obj. opcional que incluye la codificación que se debe utilizar para los datos (utf8 x defecto)
+Ejemplo:
+import fs from 'fs/promises';
+
+async function writeFile() {
+  try {
+    const fileContent = "Hola, mundo!";
+    await fs.writeFile('./example.txt', fileContent);
+    console.log('Archivo guardado exitosamente');
+  } catch (err) {
+    console.error(`Error: ${err.message}`);
+  }
+}
+
+writeFile();
+
+Este código escribirá 'Hola mundo!' en el archivo 'example.txt' en la misma ubi del script. Si el archivo
+no existe, se creará.
+El método 'writeFile' no crea carpetas automáticamente, por lo que me debo de asegurar que la ubi del archivo
+existe o crearla manualmente antes de usar este método.
+
+
+---|fs.unlink()|---
+Elimina un archivo.
+Sintaxis: fs.unlink(path);
+Ejemplo: 
+import fs from 'fs/promises';
+
+async function deleteFile(path) {
+  try {
+    await fs.unlink(path);
+    console.log('Archivo borrado exitosamente');
+  } catch (err) {
+    console.error(`Error eliminando el archivo: ${err.message}`);
+  }
+}
+
+deleteFile('./example.txt');
+
+---|fs.stat()|---
+Sirve para obtener metadatos de un archivo o directorio, como la fecha y la hora de acceso, modificación y creación.
+Ejemplo de cómo obtener la última fecha de modificación de un archivo:
+import fs from 'fs/promises';
+
+async function fsStat(filename) {
+	try {
+	const stats = await fs.stat(filename);
+
+	console.log(`Última modificación de ${filename}: ${stats.mtime}`);
+}	catch (err) {
+	console.error(`Error: ${err.message}`);
+	}
+}
+
+fsStat('./my_file.txt');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
