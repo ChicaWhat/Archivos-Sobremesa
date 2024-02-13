@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "31730c6b-f304-446a-8ce0-5d43932ca686",
+		"name": "API de posts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9687616"
+	},
+	"item": [
+		{
+			"name": "Obtener un post concreto",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"hackaboss\",\r\n    \"email\": \"email@example.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/posts/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"posts",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/posts?author=mari",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "mari"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\": \"albert34\",\r\n    \"text\": \"Ya casi es viernes...\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
