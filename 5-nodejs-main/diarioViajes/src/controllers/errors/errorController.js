@@ -1,4 +1,4 @@
-// Función controladora fianl que utilizamos en el middleware de manejo de errores
+// Función controladora final que utilizamos en el middleware de manejo de errores
 // eslint-disable-next-line no-unused-vars
 const errorController = (err, req, res, next) => {
     console.error(err);

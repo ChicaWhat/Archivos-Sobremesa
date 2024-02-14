@@ -6,8 +6,11 @@ import cors from 'cors';
 // Importamos las variables de entorno
 import { PORT } from './env.js';
 
+// Importamos las rutas
+import routes from './src/routes/index.js';
+
 // Importamos las funciones controladoras finales de los errores
-export {
+import {
     errorController,
     notFoundController,
 } from './src/controllers/errors/index.js';
@@ -23,6 +26,9 @@ app.use(cors());
 
 // Middleware que muestra info sobre la petición entrante
 app.use(morgan('dev'));
+
+// Middleware que indica a express donde están las rutas
+app.use(routes);
 
 // Middleware de manejo de errores
 // eslint-disable-next-line no-undef
