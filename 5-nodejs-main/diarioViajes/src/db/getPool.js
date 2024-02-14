@@ -25,7 +25,7 @@ const getPool = async () => {
         });
 
         // Ahora que tenemos un pool temporal creamos la base de datos si no existe.
-        await pool.query(`CREATE DATABASE IF NOT EXISTST ${MYSQL_DB}`);
+        await pool.query(`CREATE DATABASE IF NOT EXISTS ${MYSQL_DB}`);
 
         // Creamos el pool de conexiones final
         pool = await mysql.createPool({
@@ -43,6 +43,7 @@ const getPool = async () => {
         console.error(err);
     }
 };
+
 
 // Exportamos la función anterior
 export default getPool;
