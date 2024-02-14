@@ -5,3 +5,31 @@ import { MYSQL_HOST, MYSQL_USER, MYSQL_PASS, MYSQL_DB, PORT, SECRET } from '../.
 
 // Variable que almacenará un pool de conexiones
 let pool;
+
+// Función que retorna un pool de conexiones
+const getPool = async () => {
+    try {
+        // Si no hay un pool de conexiones, es decir, si la variable pool contiene un valor
+        // considerado falso, creamo un pool
+        if (!pool) {
+            // Creamos un pool termporal con el único fin de crear la base de datos
+            pool = await mysql.createPool({
+                host: MYSQL_HOST,
+                user: MYSQL_USER,
+                password: MYSQL_PASS, 
+            });
+
+            // Ahora que tenemos un pool temporal creamos la base de datos si no existe.
+            await pool.query(`CREATE DATABASE IF NOT EXISTST ${MYSQL_DB}`);
+
+            // Creamos 
+
+
+
+        }
+        
+    } catch (err) {
+        console.error(err);
+    }
+
+};
