@@ -1,3 +1,5 @@
+import loginUserController from './logindUserController.js';
 import newUserController from './newUserController.js';
 
-export { newUserController };
+
+export { newUserController, loginUserController };
