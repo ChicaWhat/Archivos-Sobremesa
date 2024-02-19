@@ -26,11 +26,17 @@ const loginUserController = async (req, res, next) => {
         // Seleccionamos los datos del usuario.
         const user = await selectUserByEmailModel(email);
 
-        // Comprobamos si la contraseña que nos llega del cliente coincide con la del usuario seleccionado.
-        const validPass = await bcrypt.compare(password, user.password);
+        // Variable que almacenará un valor booleano indicando si la contraseña es correcta o no
+        let validPass;
 
-        // Si las contraseñas no coinciden lanzamos un error.
-        if (!validPass) {
+        // Si existeun usuario comprobamos si la contraseña coincide
+        if (user) {
+            // Comprobamos si la contraseña que nos llega del cliente coincide con la del usuario seleccionado.
+            validPass = await bcrypt.compare(password, user.password);
+        }
+        
+        // Si no existe usuario o si las contraseñas no coinciden lanzamos un error.
+        if (!user || !validPass) {
             invalidCredentialsError();
         }
 

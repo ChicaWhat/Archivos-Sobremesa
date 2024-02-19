@@ -1,5 +1,8 @@
+// Con express vamos a crear el servidor
 import express from 'express';
+// Morgan, mostrar en consola la info sobre la petición entrante
 import morgan from 'morgan';
+// Llamamos a los módulos path y fs para poder trabajar y modificarlos a nuestro antojo
 import fs from 'fs/promises';
 import path from 'path';
 
@@ -9,6 +12,7 @@ import posts from './src/data/messages.json' assert { type: 'json' };
 // Importamos el puerto
 import { PORT } from './env.js';
 
+// Importamos la v4 
 import { v4 as uuidv4 } from 'uuid';
 
 // Creamos el servidor

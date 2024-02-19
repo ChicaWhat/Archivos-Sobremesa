@@ -24,6 +24,6 @@ router.post('/users/login', loginUserController);
 router.get('/users', authUserController, getOwnUserController);
 
 // Middleware que retorna info pública de un usuario. (Falta por importar y agregar la función controladora).
-router.get('/users/:userId', ...);
+router.get('/users/:userId');
 
 export default router;
