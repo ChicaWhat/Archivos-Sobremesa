@@ -6,6 +6,7 @@ import {
     newUserController,
     loginUserController,
     getOwnUserController,
+    getPublicUserController,
 } from '../controllers/users/index.js';
 
 // Importamos las funciones controladoras intermedias.
@@ -23,7 +24,7 @@ router.post('/users/login', loginUserController);
 // Middleware que retorna info privada de un usuario.
 router.get('/users', authUserController, getOwnUserController);
 
-// Middleware que retorna info pública de un usuario. (Falta por importar y agregar la función controladora).
-router.get('/users/:userId');
+// Middleware que retorna info pública de un usuario
+router.get('/users/:userId', getPublicUserController);
 
 export default router;

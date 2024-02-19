@@ -5,7 +5,7 @@ import selectUserByIdModel from '../../models/users/selectUserByIdModel.js';
 const getPublicUserController = async (req, res, next) => {
     try {
         // 1. Obtenemos el path param "userId".
-        const userId = req.params;
+        const { userId }  = req.params;
 
         // 2. Obtenemos los datos del usuario utilizando el id anterior.
         const user = await selectUserByIdModel(userId);
