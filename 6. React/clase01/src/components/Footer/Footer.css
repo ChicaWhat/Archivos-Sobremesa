@@ -1,0 +1,5 @@
+div#root > footer {
+    padding: 2rem;
+    background-color: var(--color-blue);
+    color: white;
+}

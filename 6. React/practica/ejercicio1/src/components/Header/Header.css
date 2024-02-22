@@ -1,0 +1,7 @@
+div#root > header {
+    padding: 2rem;
+    background-color: var(--color-blue);
+    color: white;
+    display: flex;
+    justify-content: center;
+}
